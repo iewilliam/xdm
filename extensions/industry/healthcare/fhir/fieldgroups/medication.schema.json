@@ -1,0 +1,142 @@
+{
+   "meta:license":[
+      "Copyright 2024 Adobe Systems Incorporated. All rights reserved.",
+      "This work is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+      "you may not use this file except in compliance with the License. You may obtain a copy",
+      "of the License at https://creativecommons.org/licenses/by/4.0/"
+   ],
+   "$id":"https://ns.fhir.org/fieldgroups/medicationdetail",
+   "$schema":"http://json-schema.org/draft-06/schema#",
+   "title":"Medication",
+   "type":"object",
+   "meta:tags":{
+      "industry":[
+         "healthcare_services"
+      ]
+   },
+   "meta:intendedToExtend":[
+      "https://ns.adobe.com/xdm/classes/medication",
+      "https://ns.adobe.com/xdm/context/profile"
+   ],
+   "meta:extensible":true,
+   "meta:abstract":true,
+   "description":"Definition of a Medication.(Based on HL7 FHIR Release 5 specifications)",
+   "definitions":{
+      "medication":{
+         "properties":{
+            "xdm:healthcareMedication":{
+               "type":"object",
+               "properties":{
+                  "xdm:identifier":{
+                     "title":"Identifier",
+                     "description":"An identifier for this patient.",
+                     "type":"array",
+                     "items":{
+                        "$ref":"https://ns.fhir.org/datatypes/identifier"
+                     }
+                  },
+                  "xdm:code":{
+                     "title":"Code",
+                     "description":"Codes that identify this medication.",
+                     "$ref":"https://ns.fhir.org/datatypes/codeableconcept"
+                  },
+                  "xdm:status":{
+                     "title":"Status",
+                     "description":"active | inactive | entered-in-error",
+                     "type":"string",
+                     "enum":[
+                        "active",
+                        "inactive",
+                        "entered-in-error"
+                     ],
+                     "meta:enum":{
+                        "active":"Active",
+                        "inactive":"Inactive",
+                        "entered-in-error":"Entered-In-Error"
+                     }
+                  },
+                  "xdm:marketingAuthorizationHolder":{
+                     "title":"Marketing Authorization Holder",
+                     "description":"Organization that has authorization to market medication.",
+                     "$ref":"https://ns.fhir.org/datatypes/reference"
+                  },
+                  "xdm:doseForm":{
+                     "title":"Dose Form",
+                     "description":"Describes the form of the item. Powder; tablets; capsule.",
+                     "$ref":"https://ns.fhir.org/datatypes/codeableconcept"
+                  },
+                  "xdm:totalVolume":{
+                     "title":"Total Volume",
+                     "description":"When the specified product code does not infer a package size, this is the specific amount of drug in the product.",
+                     "$ref":"https://ns.fhir.org/datatypes/quantity"
+                  },
+                  "xdm:ingredient":{
+                     "title":"Ingredient",
+                     "description":"Identifies a particular constituent of interest in the product.",
+                     "type":"array",
+                     "items":{
+                        "type":"object",
+                        "properties":{
+                           "xdm:item":{
+                              "title":"Item",
+                              "description":"The ingredient (substance or medication) that the ingredient.strength relates to. This is represented as a concept from a code system or described in another resource (Substance or Medication).",
+                              "$ref":"https://ns.fhir.org/datatypes/codeablereference"
+                           },
+                           "xdm:isActive":{
+                              "title":"Is Active",
+                              "type":"boolean",
+                              "description":"Active ingredient indicator."
+                           },
+                           "xdm:strengthRatio":{
+                              "title":"Strength Ratio",
+                              "description":"Specifies how many (or how much) of the items there are in this Medication (expressed as a ratio).",
+                              "$ref":"https://ns.fhir.org/datatypes/ratio"
+                           },
+                           "xdm:strengthCodeableConcept":{
+                              "title":"Strength Codeable Concept",
+                              "description":"Specifies how many (or how much) of the items there are in this Medication (expressed as a system defined terminology).",
+                              "$ref":"https://ns.fhir.org/datatypes/codeableconcept"
+                           },
+                           "xdm:strengthQuantity":{
+                              "title":"Strength Quantity",
+                              "description":"Specifies how many (or how much) of the items there are in this Medication (expressed as a quantity).",
+                              "$ref":"https://ns.fhir.org/datatypes/quantity"
+                           }
+                        }
+                     }
+                  },
+                  "xdm:batch":{
+                     "title":"Batch",
+                     "description":"Details about packaged medications.",
+                     "type":"object",
+                     "properties":{
+                        "xdm:lotNumber":{
+                           "title":"Lot Number",
+                           "description":"Identifier assigned to batch.",
+                           "type":"string"
+                        },
+                        "xdm:expirationDate":{
+                           "title":"Expiration Date",
+                           "description":"When batch will expire.",
+                           "type":"string",
+                           "format":"date-time"
+                        }
+                     }
+                  },
+                  "xdm:definition":{
+                     "title":"Definition",
+                     "description":"Knowledge about this medication.",
+                     "$ref":"https://ns.fhir.org/datatypes/reference"
+                  }
+               }
+            }
+         }
+      }
+   },
+   "allOf":[
+      {
+         "$ref":"#/definitions/medication"
+      }
+   ],
+   "meta:status":"experimental"
+}

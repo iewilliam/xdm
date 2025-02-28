@@ -1,0 +1,14 @@
+{
+  "https://ns.adobe.com/experience/customerJourneyManagement/messageProfile/messageProfileID": "4218b775-bef3-46b2-aee2-7caae052cf95",
+  "https://ns.adobe.com/experience/customerJourneyManagement/messageProfile/channel": {
+    "@id": "https://ns.adobe.com/xdm/channels/email"
+  },
+  "https://ns.adobe.com/experience/customerJourneyManagement/messageProfile/variant": "A",
+  "https://ns.adobe.com/experience/customerJourneyManagement/messageProfile/isSendTimeOptimized": true,
+  "https://ns.adobe.com/experience/customerJourneyManagement/messageProfile/isTestExecution": false,
+  "https://ns.adobe.com/experience/customerJourneyManagement/smsChannelContext/inboundMessage": "stop",
+  "https://ns.adobe.com/experience/customerJourneyManagement/smsChannelContext/inboundNumber": "1234",
+  "https://ns.adobe.com/experience/customerJourneyManagement/smsChannelContext/channelType": "MMS",
+  "https://ns.adobe.com/experience/customerJourneyManagement/smsChannelContext/profilenNumber": "12347986421",
+  "https://ns.adobe.com/experience/customerJourneyManagement/smsChannelContext/origTimestamp": "2024-09-26T15:52:25+00:00"
+}

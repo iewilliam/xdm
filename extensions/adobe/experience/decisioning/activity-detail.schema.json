@@ -23,6 +23,11 @@
           "meta:titleId": "activity-detail##xdm:id##title##69851",
           "meta:descriptionId": "activity-detail##xdm:id##description##18591"
         },
+        "xdm:priority": {
+          "title": "Activity Priority",
+          "type": "integer",
+          "description": "Priority set for the activity during publication."
+        },
         "repo:etag": {
           "title": "Activity ETag",
           "type": "string",
@@ -60,6 +65,14 @@
           "description": "The reference to a fallback option that is used when decisioning in the context of this activity does not qualify any of the regular options (this typically happens when hard constraints are applied). The value is the URI (@id) of the fallback option that is referenced.",
           "meta:titleId": "activity-detail##xdm:fallback##title##82451",
           "meta:descriptionId": "activity-detail##xdm:fallback##description##3941"
+        },
+        "xdm:matchedSurfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Matches action surfaces from the activity",
+          "description": "The activity surfaces that matches the request surfaces captured for reporting"
         }
       }
     }
