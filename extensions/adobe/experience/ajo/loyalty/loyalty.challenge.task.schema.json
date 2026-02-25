@@ -14,6 +14,12 @@
   "definitions": {
     "task": {
       "properties": {
+        "xdm:id": {
+          "title": "Task ID",
+          "type": "string",
+          "description": "Unique identifier for the task.",
+          "minLength": 1
+        },
         "xdm:state": {
           "title": "Task State",
           "type": "string",
@@ -43,6 +49,38 @@
           "type": "string",
           "format": "date-time",
           "description": "Date and time when the task ended."
+        },
+        "xdm:schedule": {
+          "title": "Schedule",
+          "type": "object",
+          "description": "Schedule and recurrence for the task.",
+          "properties": {
+            "xdm:duration": {
+              "title": "Duration",
+              "type": "string",
+              "description": "Duration of the schedule period."
+            },
+            "xdm:maxRepeat": {
+              "title": "Max Repeat",
+              "type": "integer",
+              "description": "Maximum number of repeats allowed."
+            },
+            "xdm:repeatCount": {
+              "title": "Repeat Count",
+              "type": "integer",
+              "description": "Number of repeats."
+            },
+            "xdm:currentStreak": {
+              "title": "Current Streak",
+              "type": "integer",
+              "description": "Current streak count."
+            },
+            "xdm:currentVisits": {
+              "title": "Current Visits",
+              "type": "integer",
+              "description": "Current number of visits."
+            }
+          }
         },
         "xdm:variables": {
           "title": "Variables",

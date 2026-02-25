@@ -113,14 +113,45 @@
                     "xdm:endpoint": {
                       "title": "Endpoint",
                       "type": "string",
-                      "description": "Endpoint identifier for the reward.",
-                      "minLength": 1
+                      "description": "Endpoint identifier for the reward."
                     },
                     "xdm:definition": {
                       "title": "Definition",
                       "type": "string",
-                      "description": "Definition identifier for the reward.",
-                      "minLength": 1
+                      "description": "Definition identifier for the reward."
+                    },
+                    "xdm:rewardValue": {
+                      "title": "Reward Value",
+                      "type": "string",
+                      "description": "Value of the reward."
+                    },
+                    "xdm:rewardDefinition": {
+                      "title": "Reward Definition",
+                      "type": "object",
+                      "description": "Reward definition details.",
+                      "properties": {
+                        "xdm:denomination": {
+                          "title": "Denomination",
+                          "type": "string",
+                          "description": "Denomination of the reward."
+                        },
+                        "xdm:enabled": {
+                          "title": "Enabled",
+                          "type": "boolean",
+                          "description": "Whether the reward is enabled."
+                        },
+                        "xdm:metadata": {
+                          "title": "Metadata",
+                          "type": "object",
+                          "description": "Custom key-value pairs.",
+                          "properties": {}
+                        }
+                      }
+                    },
+                    "xdm:source": {
+                      "title": "Source",
+                      "type": "string",
+                      "description": "Source of the reward."
                     }
                   }
                 },
@@ -131,6 +162,33 @@
                   "additionalProperties": {
                     "type": "string"
                   }
+                },
+                "xdm:singleTrans": {
+                  "title": "Single Transaction",
+                  "type": "boolean",
+                  "description": "Whether the challenge must be completed in a single transaction."
+                },
+                "xdm:dayPart": {
+                  "title": "Day Part",
+                  "type": "object",
+                  "description": "Time-of-day window for the challenge.",
+                  "properties": {
+                    "xdm:startMinute": {
+                      "title": "Start Minute",
+                      "type": "integer",
+                      "description": "Start minute of the day (0-1439)."
+                    },
+                    "xdm:endMinute": {
+                      "title": "End Minute",
+                      "type": "integer",
+                      "description": "End minute of the day (0-1439)."
+                    }
+                  }
+                },
+                "xdm:pickYourTask": {
+                  "title": "Pick Your Task",
+                  "type": "boolean",
+                  "description": "Whether this is a pick your task challenge, where the end user picks which task to complete at signup time."
                 },
                 "xdm:milestones": {
                   "title": "Milestones",
