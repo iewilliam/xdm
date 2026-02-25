@@ -143,8 +143,10 @@
                         "xdm:metadata": {
                           "title": "Metadata",
                           "type": "object",
-                          "description": "Custom key-value pairs.",
-                          "properties": {}
+                          "description": "Freeform custom key-value metadata for the reward.",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
                         }
                       }
                     },
@@ -271,4 +273,3 @@
   ],
   "meta:status": "experimental"
 }
-
