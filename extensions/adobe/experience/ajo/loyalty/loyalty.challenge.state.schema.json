@@ -240,46 +240,9 @@
                                 "description": "Source of the reward (e.g. milestone)."
                               }
                             }
-                          },
-                          "xdm:completionAttemptList": {
-                            "title": "Completion Attempt List",
-                            "type": "array",
-                            "description": "Attempts to deliver or apply this milestone reward.",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "xdm:date": {
-                                  "title": "Date",
-                                  "type": "string",
-                                  "format": "date-time",
-                                  "description": "When this attempt occurred."
-                                },
-                                "xdm:httpStatus": {
-                                  "title": "HTTP Status",
-                                  "type": "string",
-                                  "description": "HTTP status of the attempt (e.g. OK)."
-                                },
-                                "xdm:millis": {
-                                  "title": "Milliseconds",
-                                  "type": "number",
-                                  "description": "Duration in milliseconds."
-                                },
-                                "xdm:requestId": {
-                                  "title": "Request ID",
-                                  "type": "string",
-                                  "description": "Request identifier for the attempt.",
-                                  "minLength": 1
-                                }
-                              }
-                            }
                           }
                         }
                       }
-                    },
-                    "xdm:completeCount": {
-                      "title": "Complete Count",
-                      "type": "number",
-                      "description": "Number of milestones completed."
                     }
                   }
                 },
