@@ -153,6 +153,52 @@
             }
           }
         },
+        "xdm:currentProgress": {
+          "title": "Current Progress",
+          "type": "object",
+          "description": "Current progress toward task completion.",
+          "properties": {
+            "xdm:quantity": {
+              "title": "Quantity",
+              "type": "number",
+              "description": "Current quantity accumulated."
+            },
+            "xdm:spend": {
+              "title": "Spend",
+              "type": "number",
+              "description": "Current spend accumulated."
+            },
+            "xdm:days": {
+              "title": "days",
+              "type": "integer",
+              "description": "Number of qualified days accumulated.",
+              "meta:xdmType": "int"
+            },
+            "xdm:qualifiedEvents": {
+              "title": "Qualified Events",
+              "type": "array",
+              "description": "List of events that provided progress toward task completion.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "xdm:timestamp": {
+                    "title": "Timestamp",
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Timestamp of the qualified event."
+                  },
+                  "xdm:transactionId": {
+                    "title": "Transaction ID",
+                    "type": "string",
+                    "description": "Transaction ID associated with this qualified event.",
+                    "minLength": 1
+                  }
+                }
+              },
+              "meta:xdmType": "array"
+            }
+          }
+        },
         "xdm:taskCompletions": {
           "title": "Task Completions",
           "type": "array",
