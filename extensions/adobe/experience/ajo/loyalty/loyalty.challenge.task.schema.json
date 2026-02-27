@@ -123,6 +123,7 @@
               "title": "Multi Day",
               "type": "object",
               "description": "Multi-day visit requirements for task completion.",
+              "meta:status": "deprecated",
               "properties": {
                 "xdm:contiguous": {
                   "title": "Contiguous",
@@ -157,6 +158,7 @@
           "title": "Current Progress",
           "type": "object",
           "description": "Current progress toward task completion.",
+          "meta:status": "deprecated",
           "properties": {
             "xdm:quantity": {
               "title": "Quantity",
